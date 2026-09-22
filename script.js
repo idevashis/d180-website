@@ -139,3 +139,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
   }
 });
+
+
+// Central contact form setting. Replace only the URL below if the contact form changes.
+const CONTACT_FORM_URL = "https://forms.gle/Xz2CtqApPugpg7gf8";
+
+function setupContactLinks(){
+  document.querySelectorAll("[data-contact-link]").forEach(link=>{
+    if(CONTACT_FORM_URL && /^https?:\/\//i.test(CONTACT_FORM_URL)){
+      link.href=CONTACT_FORM_URL;
+      link.target="_blank";
+      link.rel="noopener noreferrer";
+      link.removeAttribute("aria-disabled");
+    }else{
+      link.href="#";
+      link.setAttribute("aria-disabled","true");
+      link.addEventListener("click",e=>e.preventDefault());
+    }
+  });
+}
+if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", setupContactLinks);
+else setupContactLinks();
