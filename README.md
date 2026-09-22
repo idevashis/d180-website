@@ -37,3 +37,4 @@ This is a static site. Upload the contents of this folder to GitHub and connect 
 
 ## Important
 Speaker Do's & Don'ts are intentionally NOT included on the website. They can be included in the speaker agreement.
+D180 official website - Cloudflare deployment
