@@ -118,165 +118,71 @@ body{overflow-x:hidden}
  .legal-section h2{font-size:22px!important}
  .legal-section p,.legal-section li{font-size:14px!important;line-height:1.8!important}
 }
-/* =========================================================
-   D180 MOBILE NAVIGATION FIX
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-  html,
-  body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  body.menu-open {
-    overflow: hidden;
-  }
-
-  /* Header stays above the opened navigation */
-  .site-header,
-  header {
-    position: relative;
-    z-index: 1000;
-  }
-
-  /* Mobile navigation */
-  .nav {
-    position: absolute !important;
-    top: 100% !important;
+/* MOBILE NAVIGATION FIX */
+@media (max-width: 800px) {
+  .site-header {
+    position: fixed !important;
+    top: 0 !important;
     left: 0 !important;
     right: 0 !important;
-
-    width: 100% !important;
-    height: auto !important;
-
-    display: none !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-
-    padding: 20px 24px 28px !important;
-    margin: 0 !important;
-
-    box-sizing: border-box !important;
-
-    background: #080a0f !important;
-    border-top: 1px solid rgba(255,255,255,0.10);
-    border-bottom: 1px solid rgba(255,255,255,0.10);
-
-    z-index: 9999 !important;
-  }
-
-  /* IMPORTANT:
-     Your JavaScript adds the class "open" to .nav */
-  .nav.open {
-    display: flex !important;
-  }
-
-  /* Each menu item gets its own row */
-  .nav a {
-    display: flex !important;
-    align-items: center !important;
-
-    width: 100% !important;
-    min-height: 52px !important;
-
-    padding: 14px 0 !important;
-    margin: 0 !important;
-
-    box-sizing: border-box !important;
-
-    white-space: normal !important;
-    line-height: 1.3 !important;
-
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-
-    position: relative !important;
-  }
-
-  .nav a:last-child {
-    border-bottom: none !important;
-  }
-
-  /* CTA buttons inside navigation */
-  .nav a.nav-cta,
-  .nav a.button-light,
-  .nav .nav-cta {
-    width: 100% !important;
-    min-height: 52px !important;
-
-    margin-top: 10px !important;
-    padding: 15px 16px !important;
-
-    justify-content: space-between !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Hamburger always stays above the menu */
-  .menu-toggle {
-    position: relative !important;
-    z-index: 10001 !important;
-    flex-shrink: 0 !important;
-  }
-
-  /* Prevent page content from sitting over the menu */
-  main,
-  section,
-  .hero,
-  .section,
-  .content-section {
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Mobile page spacing */
-  .site-header + main {
-    position: relative;
-  }
-}
-
-
-/* =========================================================
-   SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-  .nav {
-    padding: 16px 20px 24px !important;
-  }
-
-  .nav a {
-    min-height: 50px !important;
-    padding: 13px 0 !important;
-    font-size: 15px !important;
-  }
-
-  .nav a.nav-cta,
-  .nav a.button-light,
-  .nav .nav-cta {
-    min-height: 50px !important;
-    padding: 14px 15px !important;
-  }
-}
-/* D180 mobile navigation fix */
-@media (max-width: 768px) {
-  .site-header {
-    position: relative !important;
+    height: 70px !important;
     z-index: 1000 !important;
   }
 
-  .site-header .nav {
-    position: absolute !important;
-    top: 100% !important;
-    bottom: auto !important;
-    left: 0 !important;
+  .menu-toggle {
+    position: relative !important;
+    z-index: 1002 !important;
+  }
+
+  .nav {
+    position: fixed !important;
+    top: 70px !important;
     right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
     width: 100% !important;
-    height: auto !important;
-    max-height: calc(100vh - 70px) !important;
+    height: calc(100vh - 70px) !important;
+
+    margin: 0 !important;
+    padding: 50px 6vw !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 28px !important;
+
+    background: var(--bg) !important;
     overflow-y: auto !important;
+    overflow-x: hidden !important;
+
     z-index: 999 !important;
+
+    transform: translateX(100%) !important;
+    transition: transform .3s ease !important;
+  }
+
+  .nav.open {
+    transform: translateX(0) !important;
+  }
+
+  .nav a {
+    position: relative !important;
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: 0 0 auto !important;
+  }
+
+  .nav-cta,
+  .nav-contact {
+    padding: 13px 16px !important;
+  }
+
+  body.menu-open {
+    overflow: hidden !important;
   }
 }
