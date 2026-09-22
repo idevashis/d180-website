@@ -260,3 +260,23 @@ body{overflow-x:hidden}
     padding: 14px 15px !important;
   }
 }
+/* D180 mobile navigation fix */
+@media (max-width: 768px) {
+  .site-header {
+    position: relative !important;
+    z-index: 1000 !important;
+  }
+
+  .site-header .nav {
+    position: absolute !important;
+    top: 100% !important;
+    bottom: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: calc(100vh - 70px) !important;
+    overflow-y: auto !important;
+    z-index: 999 !important;
+  }
+}
