@@ -118,100 +118,152 @@ body{overflow-x:hidden}
  .legal-section h2{font-size:22px!important}
  .legal-section p,.legal-section li{font-size:14px!important;line-height:1.8!important}
 }
-/* D180 MOBILE NAVIGATION */
+/* =========================================================
+   D180 MOBILE NAVIGATION
+   Final mobile menu fix
+   ========================================================= */
+
 @media (max-width: 800px) {
 
+  /* Keep the header above everything */
   .site-header {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    height: 70px !important;
-    z-index: 1000 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    z-index: 1000;
   }
 
+  /* Hamburger */
   .menu-toggle {
-    display: flex !important;
-    position: relative !important;
-    z-index: 1003 !important;
+    display: flex;
+    position: relative;
+    z-index: 1100;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
   }
 
-  .nav {
+  .menu-toggle span {
+    display: block;
+    width: 23px;
+    height: 1px;
+    background: #fff;
+  }
+
+  /* MOBILE MENU */
+  .site-header .nav {
     position: fixed !important;
 
-    top: 70px !important;
+    top: 72px !important;
+    left: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
-    left: 0 !important;
 
-    width: 100% !important;
-    height: auto !important;
+    width: 100vw !important;
+
+    /* Fill everything below the header */
+    height: calc(100vh - 72px) !important;
+    min-height: calc(100vh - 72px) !important;
+    max-height: none !important;
 
     margin: 0 !important;
-    padding: 32px 6vw 50px !important;
 
     display: flex !important;
     flex-direction: column !important;
-    align-items: stretch !important;
+    align-items: flex-start !important;
     justify-content: flex-start !important;
+
+    padding: 55px 8vw 40px !important;
 
     gap: 0 !important;
 
-    background: var(--bg) !important;
+    background: #080a10 !important;
 
     overflow-y: auto !important;
     overflow-x: hidden !important;
 
-    z-index: 1001 !important;
+    z-index: 1050 !important;
+
+    /* Closed state */
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 
     transform: translateX(100%) !important;
-    transition: transform .3s ease !important;
+
+    transition:
+      transform 0.3s ease,
+      opacity 0.2s ease,
+      visibility 0s linear 0.3s !important;
   }
 
-  .nav.open {
+  /* OPEN MENU */
+  .site-header .nav.open {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
     transform: translateX(0) !important;
+
+    transition:
+      transform 0.3s ease,
+      opacity 0.2s ease,
+      visibility 0s linear 0s !important;
   }
 
-  .nav a {
+  /* Every menu item gets its own row */
+  .site-header .nav > a {
+    position: relative !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    width: 100% !important;
+    min-height: 72px !important;
+
+    flex: 0 0 auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border-bottom: 1px solid var(--line);
+
+    font-size: 20px !important;
+    line-height: 1.2 !important;
+
+    white-space: nowrap !important;
+  }
+
+  /* Last normal link */
+  .site-header .nav > a:nth-last-child(2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* Get Your Pass button */
+  .site-header .nav .nav-cta {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
 
     width: 100% !important;
-    min-height: 74px !important;
 
-    margin: 0 !important;
-    padding: 20px 0 !important;
+    min-height: 70px !important;
 
-    border-bottom: 1px solid var(--line) !important;
+    margin-top: 32px !important;
 
-    flex: 0 0 auto !important;
-    position: relative !important;
-  }
-
-  .nav a:first-child {
-    border-top: 1px solid var(--line) !important;
-  }
-
-  .nav-cta,
-  .nav-contact {
-    width: 100% !important;
-    min-height: 60px !important;
-
-    margin-top: 18px !important;
-    padding: 18px 20px !important;
+    padding: 0 18px !important;
 
     border: 1px solid var(--line) !important;
 
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
+    flex: 0 0 auto !important;
   }
 
+  /* Stop the page underneath from scrolling */
   body.menu-open {
     overflow: hidden !important;
     height: 100vh !important;
+    touch-action: none !important;
   }
-
 }
