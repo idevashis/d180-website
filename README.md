@@ -1,40 +1,28 @@
-# D180 — See the world differently.
+# D180 — Final Website
 
-Final static website package for the D180 First Edition.
+This package is based on the previous D180 website version, with only controlled corrections.
 
-## Event
-- D180 First Edition
-- 10 October 2026
-- Hyderabad
-- 16-minute talks
-- Audience dress code: Smart Formals, Formals or Semi-Formals
-- Speaker dress code: Smart Formals, Formals or Semi-Formals
-- Partner dress code: Smart Formals, Formals or Semi-Formals
-- Registered attendees who attend receive a certificate of participation.
+## Main navigation
+ABOUT · SPEAKERS · PARTNER · FAQ · GET YOUR PASS
 
 ## Pages
-- `index.html` — homepage + full FAQ
-- `experience.html` — D180 experience
-- `speakers.html` — speaker information + application
-- `speaker.html` — speaker application route (same destination)
-- `partner.html` — partnership information + application
-- `pass.html` — audience registration
-- `about.html` — founder story, mission and vision
-- `styles.css` — shared visual system
-- `script.js` — mobile menu + FAQ tabs
-- `assets/founder.jpg` — founder image
-- `assets/favicon.svg` — D180 browser favicon
-- `assets/favicon-32.png` — D180 32×32 favicon
-- `assets/apple-touch-icon.png` — D180 mobile/home-screen icon
+- index.html — homepage, Experience preview, Partner CTA, full FAQ
+- experience.html — full D180 Experience
+- speakers.html — speaker information
+- speaker.html — speaker application journey
+- about.html — D180 story and founder note
+- partner.html — partnership page with all 13 sponsor categories
+- pass.html — audience pass / registration
 
-## Official forms
+## Assets
+- assets/founder.jpg — exact sitting founder photograph, standardized to JPG
+- assets/d180-logo.png — supplied white-background black-letter D180 logo
+- assets/favicon.png — supplied favicon
+- assets/apple-touch-icon.png — supplied Apple touch icon
+
+## Forms
 Speaker: https://forms.gle/qJmHGCAX7yrLfMxJA
 Audience: https://forms.gle/L7AH7LhRpzp2SVme8
 Partnership: https://forms.gle/D8uy375WyKtPcfQ69
 
-## Deployment
-This is a static site. Upload the contents of this folder to GitHub and connect the repository to Cloudflare Workers/Pages according to the deployment setup already used for D180. No server or database is required for the website itself.
-
-## Important
-Speaker Do's & Don'ts are intentionally NOT included on the website. They can be included in the speaker agreement.
-D180 official website - Cloudflare deployment
+No speaker Do's & Don'ts are shown on the website; those belong in the agreement.
